@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @ViewBag.My World (from the view)
+        <p>
+            We`re going to have an exciting perty </br>
+            (To do: sell it better. Add pictures or something)
+        </p>
+        <!-- Html.ActionLink является вспомогательным методом HTML.
+Метод ActionLink принимает два параметра: первый – это текст для отображения в ссылке, а
+второй – это выполняемое действие, когда пользователь нажимает на ссылку. -->
+        @Html.ActionLink("RSVP now","RsvpForm")
+    </div>
+</body>
+</html>

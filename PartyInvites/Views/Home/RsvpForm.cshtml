@@ -1,0 +1,32 @@
+﻿@model PartyInvites.Models.GuestResponce
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <!-- для  передачи пользователю в чем заключается проблема валидации, и почему мы не можем принять его форму.-->
+        <p> Your name: @Html.TextBoxFor(x => x.Name)</p>
+        <p>Your Email: @Html.TextBoxFor(x => x.Email)</p>
+        <p>Your phone: @Html.TextBoxFor(x => x.Phone)</p>
+        <p>
+            Will you attend?
+            @Html.DropDownListFor(x => x.WillAttend, new[]{
+            new SelectListItem() {Text = "I`ll be here", Value = bool.TrueString },
+            new SelectListItem() {Text = "No, I can`t come", Value = bool.FalseString} }, "Choose an option")
+        </p>
+        <input type="submit" value="Submit RSVP" />
+    }
+</body>
+</html>
